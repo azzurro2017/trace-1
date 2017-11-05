@@ -1,0 +1,593 @@
+@charset "utf-8";
+
+
+
+
+
+/*　共通定義　*/
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6em;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  line-height: 1.2;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+
+li {
+  list-style: none;
+}
+
+
+
+
+
+
+
+
+/*    調整中 width:100%で対応していたが、幅を広げると上から４番目と５番目の画像がその幅に対応しけれずその2箇所だけ小さいままトロ残された。これは画像そのものが他のに比べて小さかったためと思われる。記憶が正しければそれぞれ幅660px程度だった。それ以外の画像はその倍以上に設定されていたはず。なので修正した４番目と５番目の画像の幅に大きい値を設定したためにmax-witdh:100%でも問題無く表示されたと推測。レスポンシブに対応した画像対策としてこの方法が主流なため正しい理解だと思われる。　*/
+
+img {
+  vertical-align: middle;
+  max-width: 100%;
+  height: auto;
+}
+
+
+/*    //調整中　*/
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.content-B,
+.content-C,
+.content-D,
+.content-E,
+.content-F,
+.content-G {
+  margin-bottom: 15px;
+}
+
+.hero,
+.content-2,
+.content-3,
+.content-4,
+.content-5,
+.content-6,
+.content-7 {
+  position: relative;
+}
+
+.sub-title-top {
+  position: absolute;
+  left: 2%;
+  top: 3%;
+  font-size: 2.6vw;
+}
+
+.sub-text-bottom {
+  position: absolute;
+  left: 2%;
+  bottom: 3%;
+  font-size: 2.6vw;
+}
+
+
+
+/* // 共通定義*/
+
+
+/* header */
+
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  -webkit-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.3);
+  background-color: white;
+}
+
+#header a {
+  color: black;
+}
+
+
+#header .bar {
+  padding: 20px 0;
+}
+
+
+#header .logo {
+  font-weight: bold;
+  text-align: center;
+  white-space: nowrap;
+  font-size: 2rem;
+}
+
+#header .logo span {
+  font-size: .5rem;
+  vertical-align: text-top;
+  margin-left: -5px;
+}
+
+
+
+#header .bar .sp-menu,
+.logo,
+.shopping-bag {
+  float: left;
+  width: calc(100% / 3);
+  font-size: 2rem;
+}
+
+
+/* テスト中　3等分で33.333%使用を避けたい */
+
+
+/*原因特定 absoluteでアイコンメニューの上に重なっていたため、機能しなかった。z-indexで凌いでいるためタイトルのアンカーが無効化されているのが問題。*/
+
+
+/*
+
+#header .sp-menu,
+.shopping-bag {
+  float: left;
+  width: 50%;
+  font-size: 2rem;
+
+}
+
+
+.logo{
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: -10;
+
+}
+
+*/
+
+
+/*pc header */
+
+.pc-header {
+  display: none;
+}
+
+
+/*//pc header */
+
+#header .shopping-bag {
+  text-align: right;
+}
+
+
+
+.menu-btn .fa-bars {
+  font-size: 2rem;
+}
+
+
+
+/*.sp-header{
+    position: relative;
+}
+*/
+
+
+/*sp menu-list*/
+
+.sp-sign a,
+.sp-close a {
+  display: inline-block;
+  padding: 30px;
+}
+
+
+
+
+
+#acMenu dt {
+  display: block;
+  line-height: 50px;
+  text-align: left;
+  cursor: pointer;
+  padding-left: 15px;
+}
+
+#acMenu dd {
+  text-align: center;
+  display: none;
+}
+
+
+
+/* //sp menu-list*/
+
+
+/*pc header */
+
+.pc-header {
+  display: none
+}
+
+
+/*//pc header */
+
+
+/* //header */
+
+
+/* content-A　*/
+
+.content-A .ads {
+  text-align: center;
+  color: white;
+  background-color: black;
+  margin: 100px 0 10px;
+  font-size: 1.2rem;
+  padding: 5px 0;
+}
+
+.ads span {
+  margin-left: 10px;
+  font-size: 0.1rem;
+  vertical-align: text-top;
+  -webkit-text-decoration-line: underline;
+  text-decoration-line: underline;
+}
+
+
+
+
+
+/* //content-A*/
+
+
+/* content-G*/
+
+.content-6 .sub-title-top {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  text-align: center
+}
+
+.content-6 .sub-text-bottom {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  bottom: 5%;
+  text-align: center;
+}
+
+
+
+
+/* //content-G*/
+
+
+/* content-H*/
+
+.content-7 {
+  background-image: url(../image/rv-content6.jpg);
+  background-size: cover;
+  background-position: center;
+  padding: 20px 0;
+  position: relative;
+  font-size: 2.3vw;
+}
+
+.center {
+  text-align: center;
+  color: white;
+  padding: 20px 0;
+}
+
+
+
+
+
+/* //content-H*/
+
+
+/* footer */
+
+#footer .wrapper {
+  display: none;
+}
+
+.search input {
+  display: none;
+}
+
+
+/* //footer */
+
+
+/*調整中*/
+
+.pc-pic {
+  display: none;
+}
+
+
+
+/*//調整中*/
+
+
+/* media query */
+
+
+/* 768px以上　*/
+
+@media screen and (min-width: 768px) {
+
+  a:hover {
+    color: hotpink;
+    -webkit-transition: 1s;
+    transition: 1s;
+  }
+
+
+  /*pc header */
+  .pc-header {
+    display: block;
+  }
+  /*//pc header */
+  .sp-header,
+  .sp-ads {
+    display: none;
+  }
+  .sub-ads {
+    text-align: center;
+    padding: 5px 0;
+  }
+  .ads-bar {
+    background-color: black;
+    color: white;
+  }
+  .ads-bar p {
+    display: inline-block;
+  }
+  .ads-bar .left-side {
+    float: left;
+    padding: 5px 0 5px 10px
+  }
+  .ads-bar .right-side {
+    float: right;
+    padding: 5px 10px 5px 0
+  }
+
+
+  .option {
+    text-align: right;
+    padding: 10px 0 30px;
+  }
+
+  .option .search,
+  .sign,
+  .shopping-bag {
+    display: inline-block;
+  }
+
+
+  .option .sign a,
+  .shopping-bag a {
+    color: black
+  }
+
+  .search {
+    position: relative;
+    margin-right: 20px
+  }
+
+  .search input {
+    border: none;
+    border-bottom: 1px solid;
+    padding-bottom: 3px;
+    padding-right: 60px;
+    outline: none;
+    display: block;
+  }
+
+
+
+
+  .search a {
+    color: black;
+    -webkit-transition: none;
+    transition: none;
+  }
+
+  .search .fa-search {
+    position: absolute;
+    right: 0;
+    bottom: 3px;
+  }
+
+
+
+
+  #header .sp-menu,
+  .logo,
+  .shopping-bag {
+    float: none;
+    width: auto;
+  }
+
+  #header .shopping-bag {
+    text-align: start;
+  }
+
+
+
+  .title {
+    margin-bottom: 50px;
+  }
+
+  .title a {
+    color: black;
+    font-weight: bold;
+    font-size: 2.5rem
+  }
+
+  .title a span {
+    font-size: .5rem;
+    vertical-align: top;
+    margin-left: -1px;
+  }
+
+
+
+  .left-side {
+
+    float: left
+  }
+
+  .right-side {
+    float: right;
+  }
+
+
+  .right-side li {
+    float: left;
+  }
+
+
+  .right-side li a:after {
+    content: "/"
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+  .content-7 .center {
+    font-size: 1.5vw;
+  }
+
+
+
+
+
+  /* footer pc */
+  #footer .wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  /* //footer pc */
+  #footer {
+    margin-top: 50px;
+    padding-top: 30px;
+    border-top: solid 1px
+  }
+
+  #footer a {
+    color: black;
+  }
+
+  #footer a:hover {
+    text-decoration: underline;
+    -webkit-transition: none;
+    transition: none;
+    color: black;
+  }
+
+
+  .wrapper {
+    width: 90%;
+    font-weight: bold;
+    margin: 0 auto 40px;
+  }
+
+  .wrapper ul,
+  .subscribe {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+  }
+
+
+
+  .icon li i {
+    float: left;
+    width: 25%;
+    text-align: center;
+  }
+
+
+
+  .icon li a i:hover {
+    opacity: 0.5;
+  }
+
+
+  .subscribe .comment {
+    margin-bottom: 50px
+  }
+  /*  copyright部分にcssが効かない  */
+  .copy-right {
+    font-weight: bold
+  }
+}
+
+
+
+
+/* // 768px以上　*/
+
+
+/* 1025px以上　*/
+
+@media screen and (min-width: 1025px) {
+  /*1470pxに設定すべきか？左記数値で見本は止まっている＝広がりが制限されている*/
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+}
+
+
+
+/* // 1025px以上　*/

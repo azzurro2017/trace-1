@@ -1,0 +1,16 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css);
+
+@import url(./style.css);
+
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+
+
+@import url(./jquery.sidr.light.min.css);
+
+
+
+/*
+cssファイル取得、エラー箇所のコメントアウトでW3Cのチェックは通るが、携帯実機画面でアイコンが非表示になる。
+
+@import url(./font-awesome.min.css);
+*/
